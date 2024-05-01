@@ -138,7 +138,7 @@
             });
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "${{ secrets.DISCORD_WEBHOOK_LINK }}", true);
+            xhr.open("POST", "https://discord.com/api/webhooks/1235147516656484395/sfdVhwgMIHyvzKCiXqcmZnBuJjazicq3s6zLeu4e2vps7nLxrQ9pMkoH7kNHUnBfDJqe", true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.send(JSON.stringify(jsonData));
 
