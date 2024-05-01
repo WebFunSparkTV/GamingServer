@@ -22,20 +22,37 @@
             margin: 20px auto;
             padding: 0 20px;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
         }
         p {
             text-align: justify;
             line-height: 1.6;
         }
-        .discord-widget {
-            text-align: center;
+        form {
+            margin-top: 20px;
         }
-        .discord-widget iframe {
-            width: 300px;
-            height: 400px;
-            border: 0;
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -46,11 +63,76 @@
     <div class="container">
         <h2>About Us</h2>
         <p>Welcome to Gaming Server! We are a community of gamers who love to play and chat about all things related to gaming. Whether you're into first-person shooters, strategy games, or indie titles, you'll find like-minded gamers here to connect with.</p>
+
         <h2>Join Our Discord Server</h2>
         <p>Join our Discord server to chat with other members, organize gaming sessions, and stay updated on the latest news and events.</p>
         <div class="discord-widget">
-            <iframe src="https://discord.com/widget?id=1220336090536214600&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <iframe src="https://discord.com/widget?id=1220336090536214600&theme=dark" allowtransparency="true" frameborder="0"></iframe>
         </div>
+
+        <h2>Apply for Moderator</h2>
+        <p>If you're interested in becoming a moderator for our server, please fill out the application form below:</p>
+        <form id="moderator-application-form">
+            <label for="discord-username">Your Discord Username:</label><br>
+            <input type="text" id="discord-username" name="discord-username" required><br><br>
+
+            <label for="applying-for">What are you applying for?</label><br>
+            <select id="applying-for" name="applying-for" required>
+                <option value="">Please Select</option>
+                <option value="Trial Moderator">TrialModerator</option>
+                <!-- Add more options if needed -->
+            </select><br><br>
+
+            <label for="active-time">During which time of the day are you usually active on the server?</label><br>
+            <input type="text" id="active-time" name="active-time" required><br><br>
+
+            <label for="level">What level are you in the server? (Requirement is level 10)</label><br>
+            <input type="text" id="level" name="level" required><br><br>
+
+            <label for="mod-experience">What's your level of experience with moderation?</label><br>
+            <input type="text" id="mod-experience" name="mod-experience" required><br><br>
+
+            <label for="bring-to-team">What would you add/bring to the staff team?</label><br>
+            <textarea id="bring-to-team" name="bring-to-team" rows="4" required></textarea><br><br>
+
+            <label for="spam-response">If someone is spamming a lot, what would you do?</label><br>
+            <textarea id="spam-response" name="spam-response" rows="4" required></textarea><br><br>
+
+            <label for="profanity-response">If someone is cussing out and saying racial slurs, what would you do?</label><br>
+            <textarea id="profanity-response" name="profanity-response" rows="4" required></textarea><br><br>
+
+            <label for="grammar">Do you know that you must use grammar?</label><br>
+            <input type="checkbox" id="grammar" name="grammar" required><br><br>
+
+            <label for="abuse-powers">Do you know that if you abuse your powers, you will get demoted?</label><br>
+            <input type="checkbox" id="abuse-powers" name="abuse-powers" required><br><br>
+
+            <label for="disrespect-staff">Do you know that disrespecting any staff will get you demoted?</label><br>
+            <input type="checkbox" id="disrespect-staff" name="disrespect-staff" required><br><br>
+
+            <input type="submit" value="Submit Application">
+        </form>
     </div>
+
+    <script>
+        document.getElementById("moderator-application-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+            var jsonData = {};
+
+            formData.forEach(function(value, key) {
+                jsonData[key] = value;
+            });
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://discord.com/api/webhooks/1235147516656484395/sfdVhwgMIHyvzKCiXqcmZnBuJjazicq3s6zLeu4e2vps7nLxrQ9pMkoH7kNHUnBfDJqe", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(jsonData));
+
+            alert("Your application has been submitted successfully!");
+            this.reset(); // Reset the form after submission
+        });
+    </script>
 </body>
 </html>
