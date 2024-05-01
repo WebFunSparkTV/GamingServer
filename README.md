@@ -1,5 +1,5 @@
 # GamingServer!
-The offical website for
+The offical website
 # GamingServer!
 
 One request dont look in the code pls
