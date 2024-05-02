@@ -21,38 +21,59 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1, h2 {
             text-align: center;
+            color: #333;
         }
         p {
             text-align: justify;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
         form {
             margin-top: 20px;
         }
         label {
             font-weight: bold;
+            color: #333;
         }
         input[type="text"], select, textarea {
             width: 100%;
-            padding: 8px;
-            margin: 6px 0;
+            padding: 10px;
+            margin: 8px 0;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 16px;
         }
         input[type="submit"] {
             background-color: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
         }
         input[type="submit"]:hover {
             background-color: #555;
+        }
+        a {
+            display: block;
+            background-color: #7289da;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 0;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        a:hover {
+            background-color: #4e5d94;
         }
     </style>
 </head>
@@ -66,60 +87,58 @@
 
         <h2>Join Our Discord Server</h2>
         <p>Join our Discord server to chat with other members, organize gaming sessions, and stay updated on the latest news and events.</p>
-        <p>Join our Discord server to chat with other members, organize gaming sessions, and stay updated on the latest news and events:</p>
-        <a href="https://discord.com/invite/">Join Gaming Server on Discord</a>
+        <a href="https://discord.com/invite/" target="_blank">Join Gaming Server on Discord</a>
 
         <h2>Apply for Moderator</h2>
         <p>If you're interested in becoming a moderator for our server, please fill out the application form below:</p>
         <form id="moderator-application-form">
             <label for="discord-username">Your Discord Username:</label><br>
-            <input type="text" id="discord-username" name="discord-username" required><br><br>
+            <input type="text" id="discord-username" name="discord-username" required><br>
 
             <label for="applying-for">What are you applying for?</label><br>
             <select id="applying-for" name="applying-for" required>
                 <option value="">Please Select</option>
                 <option value="Trial Moderator">Trial Moderator</option>
-                <!-- Add more options if needed -->
-            </select><br><br>
+            </select><br>
 
             <label for="active-time">During which time of the day are you usually active on the server?</label><br>
-            <input type="text" id="active-time" name="active-time" required><br><br>
+            <input type="text" id="active-time" name="active-time" required><br>
 
             <label for="level">What level are you in the server? (Requirement is level 5)</label><br>
-            <input type="text" id="level" name="level" required><br><br>
+            <input type="text" id="level" name="level" required><br>
 
             <label for="mod-experience">What's your level of experience with moderation?</label><br>
-            <input type="text" id="mod-experience" name="mod-experience" required><br><br>
+            <input type="text" id="mod-experience" name="mod-experience" required><br>
 
             <label for="bring-to-team">What would you add/bring to the staff team?</label><br>
-            <textarea id="bring-to-team" name="bring-to-team" rows="4" required></textarea><br><br>
+            <textarea id="bring-to-team" name="bring-to-team" rows="4" required></textarea><br>
 
             <label for="spam-response">If someone is spamming a lot, what would you do?</label><br>
-            <textarea id="spam-response" name="spam-response" rows="4" required></textarea><br><br>
+            <textarea id="spam-response" name="spam-response" rows="4" required></textarea><br>
 
             <label for="profanity-response">If someone is cussing out and saying racial slurs, what would you do?</label><br>
-            <textarea id="profanity-response" name="profanity-response" rows="4" required></textarea><br><br>
+            <textarea id="profanity-response" name="profanity-response" rows="4" required></textarea><br>
 
             <label for="grammar">Do you know that you must use grammar?</label><br>
             <select id="grammar" name="grammar" required>
                 <option value="">Please Select</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-            </select><br><br>
+            </select><br>
 
             <label for="abuse-powers">Do you know that if you abuse your powers, you will get demoted?</label><br>
             <select id="abuse-powers" name="abuse-powers" required>
                 <option value="">Please Select</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-            </select><br><br>
+            </select><br>
 
             <label for="disrespect-staff">Do you know that disrespecting any staff will get you demoted?</label><br>
             <select id="disrespect-staff" name="disrespect-staff" required>
                 <option value="">Please Select</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-            </select><br><br>
+            </select><br>
 
             <input type="submit" value="Submit Application">
         </form>
